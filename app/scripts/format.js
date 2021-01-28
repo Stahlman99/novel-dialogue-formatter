@@ -1,17 +1,15 @@
-let dialogue = "";
-let phrase1 = "Hello there";
-let phrase2 = "Oh... I didn't know you were here";
+let phrases = ["Hello there", "Oh... I didn't know you were here"];
 
-function generateDialogue (phrase) {
-    dialogue += ("\"" + phrase + ",\" he said. " );
-}
+function generateDialogue (phrases) {
+    let dialogue = "";
 
-function exportDialogue() {
-    console.log(dialogue)
+    phrases.map((phrase) => {
+        dialogue += ("\"" + phrase + ",\" he said. \n" );
+    });
+
+    return dialogue;
 }
 
 (() => {
-    generateDialogue(phrase1);
-    generateDialogue(phrase2);
-    exportDialogue();
+    console.log(generateDialogue(phrases));
 })()
